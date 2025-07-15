@@ -1,0 +1,61 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1a1a1a;
+    color: #ffffff;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #003366;
+    padding: 10px 0;
+}
+
+nav ul {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.bienvenida {
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.imagen-destacada {
+    width: 300px;
+    border-radius: 10px;
+}
+
+.informacion, .servicios, .testimonios, .contacto {
+    padding: 20px;
+    text-align: center;
+}
+
+button {
+    background-color: #cc0000;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #ff3333;
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #003366;
+}

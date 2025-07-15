@@ -1,0 +1,1588 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consular Services - Expertos en Gestión Migratoria</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" href="img/Logo Consular Services.png">
+    <style>
+        /* Fuentes y colores */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
+        
+        :root {
+            --primary-blue: #1e88e5;
+            --primary-red: #e53935;
+            --dark-bg: #121212;
+            --darker-bg: #0a0a0a;
+            --text-light: #f5f5f5;
+            --text-gray: #b0bec5;
+            --accent-gold: #ffb300;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        a {
+            text-decoration: none;
+        }
+        
+        body {
+            font-family: 'Open Sans', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        
+        /* Estilos generales */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        section {
+            padding: 4rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-blue);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .section-title p {
+            color: var(--text-gray);
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Botones */
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.8rem;
+            border-radius: 30px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-red);
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #c62828;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(229, 57, 53, 0.4);
+        }
+        
+        .btn-secondary {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #1565c0;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(30, 136, 229, 0.4);
+        }
+        
+        .btn-whatsapp {
+            background-color: #25d366;
+            color: white;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #128c7e;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
+        }
+        
+        /* Header */
+        header {
+            background-color: rgba(18, 18, 18, 0.9);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .logo-text span {
+            color: var(--primary-blue);
+        }
+        
+        /* Navegación */
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 2rem;
+        }
+        
+        nav ul li a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav ul li a:hover,
+        nav ul li a.active {
+            color: white;
+        }
+        
+        nav ul li a:after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background-color: var(--primary-blue);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav ul li a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+            /* url('https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80'); */
+            url('img/banner.jpeg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+        
+        .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text-gray);
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .hero-image {
+            position: absolute;
+            right: 10%;
+            bottom: 10%;
+            width: 350px;
+            height: 500px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            border: 5px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .stats {
+            display: flex;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-blue);
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-text {
+            font-size: 1rem;
+            color: var(--text-gray);
+        }
+        
+        /* About Section */
+        .about {
+            background-color: var(--darker-bg);
+        }
+        
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+        
+        .about-image {
+            flex: 1;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .about-content {
+            flex: 1;
+        }
+        
+        .about-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+        }
+        
+        .about-content p {
+            margin-bottom: 1.5rem;
+            color: var(--text-gray);
+        }
+        
+        .about-features {
+            margin-top: 2rem;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .feature-icon {
+            background-color: rgba(30, 136, 229, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+        
+        .feature-content h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .feature-content p {
+            color: var(--text-gray);
+            margin-bottom: 0;
+        }
+        
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--darker-bg);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 25px 15px;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+            border-color: var(--primary-blue);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+        
+        .service-content p {
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features {
+            margin-bottom: 1.5rem;
+        }
+        
+        .service-features li {
+            color: var(--text-gray);
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+            list-style-type: none;
+        }
+        
+        .service-features li:before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+        }
+        
+        .service-link {
+            display: inline-block;
+            color: var(--primary-blue);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+        
+        .service-link:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        /* Testimonials Section */
+        .testimonials {
+            background-color: var(--darker-bg);
+            position: relative;
+        }
+        
+        .testimonials:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1543269664-6478bf4f3d6a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .testimonials-container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .testimonial-card {
+            background-color: rgba(30, 30, 30, 0.7);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .testimonial-card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            border-color: var(--primary-blue);
+        }
+        
+        .testimonial-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 1.5rem;
+            border: 3px solid var(--primary-blue);
+        }
+        
+        .testimonial-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .testimonial-author h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .testimonial-author p {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        .testimonial-text {
+            margin-bottom: 1.5rem;
+            font-style: italic;
+            color: var(--text-gray);
+        }
+        
+        .testimonial-rating {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+        }
+        
+        /* FAQ Section */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            margin-bottom: 1.5rem;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: var(--darker-bg);
+            transition: all 0.3s ease;
+        }
+        
+        .faq-question {
+            width: 100%;
+            padding: 1.5rem;
+            background-color: rgba(30, 136, 229, 0.1);
+            border: none;
+            text-align: left;
+            cursor: pointer;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .faq-question:hover {
+            background-color: rgba(30, 136, 229, 0.2);
+        }
+        
+        .faq-answer {
+            padding: 1.5rem;
+            background-color: rgba(30, 30, 30, 0.5);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .faq-answer p {
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+        }
+        
+        .faq-answer ul {
+            list-style-type: none;
+            margin-bottom: 1rem;
+        }
+        
+        .faq-answer li {
+            margin-bottom: 0.5rem;
+            color: var(--text-gray);
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .faq-answer li:before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary-blue);
+        }
+
+        .text-center {
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background-color: var(--darker-bg);
+            position: relative;
+        }
+        
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+        }
+        
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .contact-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .contact-info p {
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+        }
+        
+        .contact-method {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact-icon {
+            background-color: rgba(30, 136, 229, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            color: var(--primary-blue);
+            font-size: 1.2rem;
+        }
+        
+        .contact-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .contact-details p,
+        .contact-details a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .contact-details a:hover {
+            color: var(--primary-blue);
+        }
+        
+        .contact-form {
+            background-color: rgba(30, 30, 30, 0.7);
+            padding: 2rem;
+            border-radius: 15px;
+            backdrop-filter: blur(5px);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: white;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background-color: rgba(255, 255, 255, 0.05);
+            color: white;
+            font-family: 'Open Sans', sans-serif;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 0 3px rgba(30, 136, 229, 0.3);
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            background-color: var(--primary-blue);
+            color: white;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .submit-btn:hover {
+            background-color: #1565c0;
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--darker-bg);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-logo {
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo a {
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-logo img {
+            height: 50px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--primary-blue);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            color: var(--text-gray);
+            font-size: 0.9rem;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero-image {
+                width: 300px;
+                height: 450px;
+                right: 5%;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header-container {
+                padding: 1rem;
+            }
+            
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .hero {
+                text-align: center;
+                padding-top: 100px;
+                height: auto;
+                min-height: 100vh;
+            }
+            
+            .hero-content {
+                margin: 0 auto;
+                padding: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-image {
+                position: relative;
+                margin: 2rem auto;
+                right: auto;
+                bottom: auto;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .about-container {
+                flex-direction: column;
+            }
+            
+            .about-image {
+                margin-bottom: 2rem;
+            }
+            
+            .testimonials-grid,
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="img/Logo Consular Services.png" alt="Logo ConsularServices - Pasaporte con banderas de diferentes países">
+                <span class="logo-text">Consular<span>Services</span></span>
+            </a>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul id="mainMenu">
+                    <li><a href="#inicio" class="active">Inicio</a></li>
+                    <li><a href="#nosotros">Nosotros</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#testimonios">Casos de éxito</a></li>
+                    <li><a href="#preguntas">FAQ</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Tu futuro migratorio en manos de expertos</h1>
+                <p>Brindamos soluciones personalizadas para tus necesidades migratorias en EE.UU., Canadá, Europa y más. Más de 15 años ayudando a familias a cumplir sus sueños en el extranjero.</p>
+                
+                <div class="hero-buttons">
+                    <a href="#contacto" class="btn btn-primary">
+                        <i class="fas fa-calendar-check"></i> Agendar consulta
+                    </a>
+                    <a href="https://wa.me/5215512345678?text=Hola%20ConsularServices,%20quisiera%20una%20asesoría" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+                
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">3,500+</div>
+                        <div class="stat-text">Casos exitosos</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15+</div>
+                        <div class="stat-text">Años de experiencia</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-text">Tasa de aprobación</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-image">
+                <img src="https://i.postimg.cc/PJqfd1TH/immigration-lawyer.jpg" alt="Lic. JeanCarlos Restitullo - Director de ConsularServices en su oficina, revisando documentos con traje profesional">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="nosotros">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestra filosofía</h2>
+                <p>Cada caso migratorio es único y merece atención personalizada y profesional</p>
+            </div>
+            
+            <div class="about-container">
+                <div class="about-image">
+                    <img src="img/EquipoTemporal.jpg" alt="Equipo de ConsularServices reunido en la sala de conferencias analizando casos migratorios">
+                </div>
+                
+                <div class="about-content">
+                    <h3>El equipo que cambiará tu futuro</h3>
+                    <p>Fundada en 2008 por el Lic. JeanCarlos Restitullo, ConsularServices nació con la misión de brindar asesoría migratoria ética, transparente y profesional para familias que buscan oportunidades en el extranjero.</p>
+                    <p>Lo que comenzó como un pequeño despacho se ha convertido en una de las consultorías migratorias más respetadas de la región, gracias a nuestro enfoque centrado en el cliente y nuestros resultados comprobables.</p>
+                    
+                    <div class="about-features">
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Experiencia internacional</h4>
+                                <p>Equipo multicultural con experiencia en sistemas migratorios de múltiples países.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-balance-scale"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Enfoque legal estratégico</h4>
+                                <p>Evaluamos todas las opciones legales para encontrar la mejor solución para tu caso.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">
+                                <i class="fas fa-hand-holding-heart"></i>
+                            </div>
+                            <div class="feature-content">
+                                <h4>Soporte emocional</h4>
+                                <p>Entendemos el estrés del proceso migratorio y ofrecemos acompañamiento completo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <h2>Nuestros servicios</h2>
+                <p>Soluciones migratorias integrales adaptadas a tus necesidades</p>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Servicio 1 -->
+                <div class="service-card">
+                    <!-- <div class="service-image">
+                        <img src="https://i.postimg.cc/3NJ7YwZL/work-visa.jpg" alt="Persona recibiendo visa de trabajo en un consulado">
+                    </div> -->
+
+                    <div class="service-content">
+                        <i class="fas fa-passport text-white text-2xl" style="font-size: 3rem; text-align: center;"></i>
+                        <h3>Visas de trabajo</h3>
+                        <p>Gestión completa de visas laborales en EE.UU., Canadá, Europa y otros destinos para profesionales calificados.</p>
+                        
+                        <ul class="service-features">
+                            <li>Sponsorship por empleador</li>
+                            <li>Transferencias corporativas (L1, ICT)</li>
+                            <li>Visas para profesiones especializadas</li>
+                            <li>Tramitación de permisos de trabajo</li>
+                        </ul>
+                        
+                        <a href="#" class="service-link">
+                            Más información <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Servicio 2 -->
+                <div class="service-card">
+                    <!-- <div class="service-image">
+                        <img src="https://i.postimg.cc/d0MBpHMS/family-reunification.jpg" alt="Familia de diferentes generaciones abrazándose en un aeropuerto">
+                    </div> -->
+                    <div class="service-content">
+                        <i class="fas fa-passport text-white text-2xl" style="font-size: 3rem; text-align: center;"></i>
+                        <h3>Reunificación familiar</h3>
+                        <p>Ayudamos a familias separadas por fronteras a reunirse legalmente en su país de destino.</p>
+                        
+                        <ul class="service-features">
+                            <li>Peticiones familiares</li>
+                            <li>Ajuste de estatus</li>
+                            <li>Procesos consulares</li>
+                            <li>Excepciones por circunstancias especiales</li>
+                        </ul>
+                        
+                        <a href="#" class="service-link">
+                            Más información <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Servicio 3 -->
+                <div class="service-card">
+                    <!-- <div class="service-image">
+                        <img src="https://i.postimg.cc/DyHrQxqM/student-visa.jpg" alt="Estudiante en biblioteca universitaria con libros y computadora">
+                    </div> -->
+                    <div class="service-content">
+                        <i class="fas fa-passport text-white text-2xl" style="font-size: 3rem; text-align: center;"></i>
+                        <h3>Visas de estudiante</h3>
+                        <p>Asesoría completa para estudiar en el extranjero con opción a residencia posterior.</p>
+                        
+                        <ul class="service-features">
+                            <li>Selección de instituciones educativas</li>
+                            <li>Visa F1, J1 (EE.UU.)</li>
+                            <li>Estudio en Canadá y Europa</li>
+                            <li>Tramitación de permisos de trabajo post-graduación</li>
+                        </ul>
+                        
+                        <a href="#" class="service-link">
+                            Más información <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Servicio 4 -->
+                <div class="service-card">
+                    <!-- <div class="service-image">
+                        <img src="https://i.postimg.cc/fLd2NHtB/investment-visa.jpg" alt="Personas estrechando manos en acuerdo de negocios internacionales">
+                    </div> -->
+                    <div class="service-content">
+                        <i class="fas fa-passport text-white text-2xl" style="font-size: 3rem; text-align: center;"></i>
+                        <h3>Visas de inversión</h3>
+                        <p>Opciones migratorias a través de inversión en negocios o proyectos económicos.</p>
+                        
+                        <ul class="service-features">
+                            <li>EB-5 (EE.UU.)</li>
+                            <li>Start-Up Visa (Canadá y Europa)</li>
+                            <li>Golden Visa (España y Portugal)</li>
+                            <li>Asesoría en creación de planes de negocio</li>
+                        </ul>
+                        
+                        <a href="#" class="service-link">
+                            Más información <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Servicio 5 -->
+                <div class="service-card">
+                    <!-- <div class="service-image">
+                        <img src="https://i.postimg.cc/ydDcYKdV/legal-defense.jpg" alt="Abogado revisando documentos legales con cliente en oficina">
+                    </div> -->
+                    <div class="service-content">
+                        <i class="fas fa-passport text-white text-2xl" style="font-size: 3rem; text-align: center;"></i>
+                        <h3>Defensa en deportación</h3>
+                        <p>Representación legal especializada en procedimientos de deportación y apelaciones.</p>
+                        
+                        <ul class="service-features">
+                            <li>Audiencias migratorias</li>
+                            <li>Solicitudes de cancelación de deportación</li>
+                            <li>Apelaciones ante corte migratoria</li>
+                            <li>Defensa de asilo y protección</li>
+                        </ul>
+                        
+                        <a href="#" class="service-link">
+                            Más información <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Servicio 6 -->
+                <div class="service-card">
+                    <!-- <div class="service-image">
+                        <img src="https://i.postimg.cc/YqXtPTJ7/citizenship.jpg" alt="Persona recibiendo certificado de naturalización en ceremonia">
+                    </div> -->
+                    <div class="service-content">
+                        <i class="fas fa-passport text-white text-2xl" style="font-size: 3rem; text-align: center;"></i>
+                        <h3>Ciudadanía y naturalización</h3>
+                        <p>Procesos para obtener la ciudadanía en tu país de residencia y disfrutar de todos los beneficios.</p>
+                        
+                        <ul class="service-features">
+                            <li>Naturalización por residencia</li>
+                            <li>Derecho de sangre (jus sanguinis)</li>
+                            <li>Doble nacionalidad</li>
+                            <li>Preparación para examen de ciudadanía</li>
+                        </ul>
+                        
+                        <a href="#" class="service-link">
+                            Más información <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials" id="testimonios">
+        <div class="container testimonials-container">
+            <div class="section-title">
+                <h2>Historias de éxito</h2>
+                <p>Lo que dicen nuestros clientes sobre nuestra asesoría</p>
+            </div>
+            
+            <div class="testimonials-grid">
+                <!-- Testimonio 1 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.postimg.cc/nh4yCJ9s/client1.jpg" alt="Roberto Sánchez - Cliente satisfecho con visa de trabajo en Canadá">
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Roberto Sánchez</h4>
+                            <p>Ingeniero en Vancouver</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        "Gracias a ConsularServices conseguí mi visa de trabajo en Canadá en tiempo récord. El equipo fue muy profesional y me guió en cada paso. Hoy tengo un excelente empleo y calidad de vida."
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonio 2 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.postimg.cc/KcFz4w9M/client2.jpg" alt="Familia Mendoza - Reunificación familiar exitosa en EE.UU.">
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>Familia Mendoza</h4>
+                            <p>Reunidos en Chicago</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        "Después de 5 años separados, ConsularServices logró reunirnos legalmente en EE.UU. Su conocimiento del sistema y atención personalizada hicieron la diferencia en nuestro caso complejo."
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                
+                <!-- Testimonio 3 -->
+                <div class="testimonial-card">
+                    <div class="testimonial-header">
+                        <div class="testimonial-avatar">
+                            <img src="https://i.postimg.cc/3wF0rVcX/client3.jpg" alt="María González - Estudiante con visa F1 en Boston">
+                        </div>
+                        <div class="testimonial-author">
+                            <h4>María González</h4>
+                            <p>Estudiante en Boston</p>
+                        </div>
+                    </div>
+                    <div class="testimonial-text">
+                        "El proceso para mi visa F1 fue impecable. Me ayudaron desde la selección de universidad hasta la entrevista consular. Ahora estudio en mi institución soñada con opción a OPT."
+                    </div>
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="preguntas">
+        <div class="container">
+            <div class="section-title">
+                <h2>Preguntas frecuentes</h2>
+                <p>Resolvemos tus dudas sobre procesos migratorios</p>
+            </div>
+            
+            <div class="faq-container">
+                <!-- Pregunta 1 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Cuánto tiempo tarda un proceso migratorio?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Los tiempos varían significativamente según el tipo de proceso y el país de destino. Algunos ejemplos generales:</p>
+                        <ul>
+                            <li>Visas de turismo: 2-8 semanas</li>
+                            <li>Visas de trabajo: 3-12 meses (dependiendo del país y categoría)</li>
+                            <li>Residencias permanentes: 6-36 meses</li>
+                            <li>Ciudadanía: 1-3 años después de obtener residencia permanente</li>
+                        </ul>
+                        <p>En tu consulta inicial evaluaremos tu caso específico para darte un estimado más preciso.</p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 2 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Qué documentos necesito para iniciar mi proceso?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Los requisitos básicos incluyen:</p>
+                        <ul>
+                            <li>Pasaporte válido por al menos 6 meses</li>
+                            <li>Antecedentes penales de todos los países donde hayas residido</li>
+                            <li>Certificados médicos (para ciertos procesos)</li>
+                            <li>Documentación de apoyo específica para el tipo de visa (contratos laborales, cartas de aceptación académica, etc.)</li>
+                            <li>Pruebas de solvencia económica según el caso</li>
+                        </ul>
+                        <p>Te proporcionaremos una lista detallada y personalizada según tu situación migratoria.</p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 3 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Qué sucede si mi solicitud es rechazada?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>En caso de rechazo:</p>
+                        <ul>
+                            <li>Analizaremos en detalle las razones del rechazo</li>
+                            <li>Te asesoraremos sobre posibles recursos o apelaciones</li>
+                            <li>Evaluaremos opciones alternativas para tu caso</li>
+                            <li>Trabajaremos en fortalecer tu nueva solicitud</li>
+                        </ul>
+                        <p>Nuestro equipo cuenta con amplia experiencia en casos complejos y hemos logrado revertir muchas negativas iniciales.</p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 4 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Ofrecen garantías en los procesos migratorios?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Es importante entender que ningún consultor migratorio ético puede garantizar resultados, ya que las decisiones finales dependen exclusivamente de las autoridades migratorias de cada país. Lo que sí ofrecemos:</p>
+                        <ul>
+                            <li>Evaluación honesta de tus posibilidades reales</li>
+                            <li>Procesos profesionales y transparentes</li>
+                            <li>Seguimiento constante de tu caso</li>
+                            <li>Representación experta en cada etapa</li>
+                        </ul>
+                        <p>Nuestra tasa de aprobación del 98% habla por sí sola de la calidad de nuestro trabajo.</p>
+                    </div>
+                </div>
+                
+                <!-- Pregunta 5 -->
+                <div class="faq-item">
+                    <button class="faq-question">
+                        <span>¿Puedo llevar a mi familia conmigo?</span>
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Las posibilidades dependen del tipo de visa o residencia que estés tramitando:</p>
+                        <ul>
+                            <li><strong>Visas de trabajo:</strong> Muchas permiten llevar cónyuge e hijos menores</li>
+                            <li><strong>Visas de estudiante:</strong> Algunas permiten traer familiares en ciertas condiciones</li>
+                            <li><strong>Residencias:</strong> Generalmente incluyen opción de reagrupación familiar</li>
+                            <li><strong>Ciudadanía:</strong> Puedes patrocinar a familiares cercanos</li>
+                        </ul>
+                        <p>Durante tu consulta inicial te explicaremos exactamente qué opciones tiene tu familia según el proceso que elijas.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-12">
+                <a href="#contacto" class="btn btn-primary">
+                    <i class="fas fa-question-circle"></i> ¿Tienes otra pregunta? Contáctanos
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contacto">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contacto</h2>
+                <p>Comienza hoy mismo tu proceso migratorio con una consulta especializada</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Estamos aquí para ayudarte</h3>
+                    <p>Agenda una cita con nuestro equipo de expertos. Puedes visitarnos en nuestras oficinas, contactarnos por teléfono o enviarnos un mensaje directo.</p>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Oficina principal</h4>
+                            <p>Av. Reforma 1234, Col. Juárez<br>Ciudad de México, CP 06600</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Teléfono</h4>
+                            <p><a href="tel:+525512345678">+52 55 1234 5678</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>Correo electrónico</h4>
+                            <p><a href="mailto:info@ConsularServices.com">info@ConsularServices.com</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h4>WhatsApp</h4>
+                            <p><a href="https://wa.me/5215512345678">+52 1 55 1234 5678</a></p>
+                        </div>
+                    </div>
+                    
+                    <div class="map-container mt-8">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.8883746210835!2d-99.16509882587176!3d19.427021540415243!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff35f5bd1563%3A0x6c366f0e15de6470!2sEl%C3%A1ngel%20de%20la%20Independencia!5e0!3m2!1ses!2smx!4v1688756336330!5m2!1ses!2smx" 
+                                width="100%" height="250" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nombre completo</label>
+                            <input type="text" id="name" name="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Correo electrónico</label>
+                            <input type="email" id="email" name="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Teléfono de contacto</label>
+                            <input type="tel" id="phone" name="phone" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="service">Servicio de interés</label>
+                            <select id="service" name="service" class="form-control" required>
+                                <option value="" disabled selected>Selecciona una opción</option>
+                                <option value="work_visa">Visa de trabajo</option>
+                                <option value="student_visa">Visa de estudiante</option>
+                                <option value="family_reunification">Reunificación familiar</option>
+                                <option value="investment_visa">Visa de inversión</option>
+                                <option value="citizenship">Ciudadanía y naturalización</option>
+                                <option value="other">Otro</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Tu mensaje</label>
+                            <textarea id="message" name="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-btn">
+                            <i class="fas fa-paper-plane mr-2"></i> Enviar consulta
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                    <img src="img/Logo Consular Services.png" alt="ConsularServices Logo - Pasaporte con banderas multicolores">
+                    <br>
+                    <span class="logo-text">Consular<span>Services</span></span>
+                    <p style="color: gray;">Asesoría Legal y Migratoria</p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#inicio">Inicio</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#servicios">Servicios</a>
+                <a href="#testimonios">Casos de éxito</a>
+                <a href="#preguntas">Preguntas frecuentes</a>
+                <a href="#contacto">Contacto</a>
+                <a href="#">Aviso de privacidad</a>
+            </div>
+            
+            <div class="social-links">
+                <a href="https://www.facebook.com/ConsularServices"><i class="fab fa-facebook-f"></i></a>
+                <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                <a href="https://www.instagram.com/consularservices2/"><i class="fab fa-instagram"></i></a>
+                <!-- <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
+                <!-- <a href="#"><i class="fab fa-youtube"></i></a> -->
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 ConsularServices. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainMenu = document.getElementById('mainMenu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainMenu.classList.toggle('show');
+            mobileMenuBtn.innerHTML = mainMenu.classList.contains('show') ? 
+                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+
+                // Close mobile menu if open
+                if (mainMenu.classList.contains('show')) {
+                    mainMenu.classList.remove('show');
+                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                }
+            });
+        });
+
+        // FAQ accordion functionality
+        const faqQuestions = document.querySelectorAll('.faq-question');
+        
+        faqQuestions.forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('i');
+                
+                // Toggle answer visibility
+                answer.classList.toggle('hidden');
+                
+                // Rotate icon
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+                
+                // Close other open answers
+                faqQuestions.forEach(q => {
+                    if (q !== question) {
+                        q.nextElementSibling.classList.add('hidden');
+                        q.querySelector('i').classList.remove('rotate-180');
+                    }
+                });
+            });
+        });
+
+        // Form submission
+        const contactForm = document.getElementById('contactForm');
+        
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const service = document.getElementById('service').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would normally send the data to your server
+            // For this example, we'll just show an alert
+            alert(`Gracias ${name}, hemos recibido tu consulta sobre ${service}. Nos pondremos en contacto contigo pronto.`);
+            
+            // Reset form
+            contactForm.reset();
+        });
+
+        // Scroll reveal animation
+        window.addEventListener('scroll', revealOnScroll);
+
+        function revealOnScroll() {
+            const elements = document.querySelectorAll('.service-card, .feature-item, .testimonial-card');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.2;
+                
+                if (elementPosition < screenPosition) {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Initialize elements with opacity 0 for animation
+        document.querySelectorAll('.service-card, .feature-item, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+        });
+
+        // Trigger once on page load
+        revealOnScroll();
+    </script>
+</body>
+</html>
