@@ -170,6 +170,15 @@
         }
 
         /* Navegación */
+
+        #mainMenu {
+            display: flex;
+            flex-direction: row;
+            gap: 1.5rem;
+            list-style: none;
+        }
+
+
         nav ul {
             display: flex;
             list-style: none;
@@ -216,8 +225,8 @@
             cursor: pointer;
         }
 
-        /* Hero Section */
-        .hero {
+        /* home Section */
+        .home {
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
                 /* url('https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80'); */
@@ -226,47 +235,50 @@
             background-position: center;
             display: flex;
             align-items: center;
-            text-align: left;
+            text-align: justify;
         }
 
-        .hero-content {
+        .home-content {
             max-width: 600px;
         }
 
-        .hero h1 {
+        .home h1 {
             font-size: 3rem;
             margin-bottom: 1.5rem;
             line-height: 1.2;
         }
 
-        .hero p {
+        .home p {
             font-size: 1.2rem;
             margin-bottom: 2rem;
             color: var(--text-gray);
         }
 
-        .hero-buttons {
+        .home-buttons {
             display: flex;
             gap: 1rem;
             margin-bottom: 2rem;
         }
 
-        .hero-image {
+        .home-image {
             position: absolute;
-            right: 8%;
+            right: 0%;
             bottom: 0%;
-            width: 350px;
-            height: 700px;
+            width: auto;
+            height: 90vh;
             border-radius: 15px;
             overflow: hidden;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            /* box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5); */
             /* border: 5px solid rgba(255, 255, 255, 0.1); */
         }
 
-        .hero-image img {
+        .home-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            mask-image: linear-gradient(black 80%,
+                    transparent);
+            filter: brightness(75%);
         }
 
         .stats {
@@ -342,8 +354,8 @@
 
         .feature-icon {
             background-color: rgba(30, 136, 229, 0.1);
-            width: 60px;
-            height: 50px;
+            width: 3.5rem;
+            height: 3rem;
             border-radius: 50%;
             display: flex;
             align-items: center;
@@ -368,6 +380,37 @@
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
             gap: 2rem;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            gap: 0.5rem;
+            width: fit-content;
+            height: fit-content;
+            margin-bottom: 2rem;
+            border-radius: 0.2rem;
+        }
+
+        .tab {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+            border-radius: 0.2rem;
+            padding: 0.5rem 1rem;
+            border: 0.01px solid rgba(46, 46, 46, 0.3);
+            background: var(--darker-bg);
+            cursor: pointer;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .tab.active {
+            border: none;
+            /* border-radius: 0.3rem; */
+            background: #e60000;
+            color: var(--white-color);
+            transform: scale(1.1);
+            transition: all 0.3s ease-in-out;
         }
 
         .service-card {
@@ -571,12 +614,25 @@
             background-color: rgba(30, 136, 229, 0.2);
         }
 
+        .faq-question i {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-question i.rotate-180 {
+            transform: rotate(180deg);
+        }
+
+
         .faq-answer {
             padding: 1.5rem;
             background-color: rgba(30, 30, 30, 0.5);
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             display: none;
             animation: fadeIn 0.3s ease;
+        }
+
+        .faq-answer.show {
+            display: block;
         }
 
         .faq-answer p {
@@ -695,9 +751,13 @@
             border-radius: 8px;
             border: 1px solid rgba(255, 255, 255, 0.2);
             background-color: rgba(255, 255, 255, 0.05);
-            color: white;
+            color: var(--text-gray);
             font-family: 'Open Sans', sans-serif;
             transition: all 0.3s;
+        }
+
+        .form-control option {
+            background-color: var(--dark-bg);
         }
 
         .form-control:focus {
@@ -809,17 +869,42 @@
         }
 
         /* Responsive Styles */
-        @media (max-width: 1024px) {
-            .hero-image {
-                width: 300px;
-                height: 450px;
-                right: 5%;
+        @media (max-width: 1425px) {
+
+            .home-image{
+                display: none;
             }
+            .mobile-menu-btn {
+                display: none;
+            }
+
         }
 
-        @media (max-width: 768px) {
+        @media (max-width: 800px) {
             .header-container {
                 padding: 1rem;
+            }
+
+            #mainMenu {
+                display: none;
+                flex-direction: column;
+                background-color: var(--darker-bg);
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                z-index: 1000;
+                padding: 1rem;
+                box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            }
+
+            #mainMenu.show {
+                display: flex;
+            }
+
+            /* Asegura que el botón del menú solo se muestre en móvil */
+            .mobile-menu-btn {
+                display: inline-block;
             }
 
             nav ul {
@@ -830,30 +915,34 @@
                 display: block;
             }
 
-            .hero {
+            .home {
                 text-align: center;
                 padding-top: 100px;
                 height: auto;
                 min-height: 100vh;
             }
 
-            .hero-content {
+            .home-content {
                 margin: 0 auto;
                 padding: 2rem;
             }
 
-            .hero h1 {
+            .home h1 {
                 font-size: 2.5rem;
             }
 
-            .hero-image {
+            .home-image {
+                display: block;
                 position: relative;
                 margin: 2rem auto;
+                width: 300px;
+                height: 550px;
+                right: 5%;
                 right: auto;
                 bottom: auto;
             }
 
-            .hero-buttons {
+            .home-buttons {
                 flex-direction: column;
                 align-items: center;
             }
@@ -865,10 +954,15 @@
 
             .about-container {
                 flex-direction: column;
+                text-align: center;
             }
 
             .about-image {
                 margin-bottom: 2rem;
+            }
+
+            .tabs {
+                flex-direction: column;
             }
 
             .testimonials-grid,
@@ -878,16 +972,32 @@
 
             .contact-container {
                 grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .contact-method {
+                align-items: start;
+                justify-content: center;
+                margin: none;
+            }
+
+            .conctact-icon  {
+                margin: none;
             }
         }
 
         @media (max-width: 480px) {
-            .hero h1 {
+            .home h1 {
                 font-size: 2rem;
             }
 
             .section-title h2 {
                 font-size: 2rem;
+            }
+
+            .feature-icon {
+                background-color: none;
+                color: none;
             }
         }
     </style>
@@ -920,15 +1030,15 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="inicio">
+    <!-- Home Section -->
+    <section class="home" id="inicio">
         <div class="container">
-            <div class="hero-content">
+            <div class="home-content">
                 <h1>Tu futuro migratorio en manos de expertos</h1>
                 <p>Brindamos soluciones personalizadas para tus necesidades migratorias en EE.UU., Canadá, Europa y más.
                     Más de X años ayudando a familias a cumplir sus sueños en el extranjero.</p>
 
-                <div class="hero-buttons">
+                <div class="home-buttons">
                     <a href="#contacto" class="btn btn-primary">
                         <i class="fas fa-calendar-check"></i> Agendar consulta
                     </a>
@@ -953,8 +1063,8 @@
                 </div>
             </div>
 
-            <div class="hero-image">
-                <img src="https://i.postimg.cc/PJqfd1TH/immigration-lawyer.jpg"
+            <div class="home-image">
+                <img src="img/JeanCarlos2.png"
                     alt="Lic. JeanCarlos Restitullo - Director de ConsularServices en su oficina, revisando documentos con traje profesional">
             </div>
         </div>
@@ -976,7 +1086,7 @@
 
                 <div class="about-content">
                     <h3>El equipo que cambiará tu futuro</h3>
-                    <p>Fundada en 2016 por el Lic. JeanCarlos Restitullo, ConsularServices nació con la misión de
+                    <p>Fundada en 2006 por el Lic. JeanCarlos Restitullo, ConsularServices nació con la misión de
                         brindar asesoría migratoria ética, transparente y profesional para familias que buscan
                         oportunidades en el extranjero.</p>
                     <p>Lo que comenzó como un pequeño despacho se ha convertido en una de las consultorías migratorias
@@ -1028,147 +1138,16 @@
                 <p>Soluciones migratorias integrales adaptadas a tus necesidades</p>
             </div>
 
-            <div class="services-grid">
-                <!-- Servicio 1 -->
-                <div class="service-card">
-                    <!-- <div class="service-image">
-                        <img src="https://i.postimg.cc/3NJ7YwZL/work-visa.jpg" alt="Persona recibiendo visa de trabajo en un consulado">
-                    </div> -->
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab active" data-tab="visas">Visas</button>
+                <button class="tab" data-tab="legalizacion">Legalización</button>
+                <button class="tab" data-tab="notarizacion">Notarización</button>
+                <button class="tab" data-tab="consultas">Consultas</button>
+            </div>
 
-                    <div class="service-content">
-                        <i class="fas fa-passport text-white text-2xl" style="font-size: 3rem; text-align: center;"></i>
-                        <h3>Visas de trabajo</h3>
-                        <p>Gestión completa de visas laborales en EE.UU., Canadá, Europa y otros destinos para
-                            profesionales calificados.</p>
-
-                        <ul class="service-features">
-                            <li>Sponsorship por empleador</li>
-                            <li>Transferencias corporativas (L1, ICT)</li>
-                            <li>Visas para profesiones especializadas</li>
-                            <li>Tramitación de permisos de trabajo</li>
-                        </ul>
-
-                        <a href="#" class="service-link">
-                            Más información <i class="fas fa-chevron-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Servicio 2 -->
-                <div class="service-card">
-                    <!-- <div class="service-image">
-                        <img src="https://i.postimg.cc/d0MBpHMS/family-reunification.jpg" alt="Familia de diferentes generaciones abrazándose en un aeropuerto">
-                    </div> -->
-                    <div class="service-content">
-                        <i class="fas fa-passport text-white text-2xl" style="font-size: 3rem; text-align: center;"></i>
-                        <h3>Reunificación familiar</h3>
-                        <p>Ayudamos a familias separadas por fronteras a reunirse legalmente en su país de destino.</p>
-
-                        <ul class="service-features">
-                            <li>Peticiones familiares</li>
-                            <li>Ajuste de estatus</li>
-                            <li>Procesos consulares</li>
-                            <li>Excepciones por circunstancias especiales</li>
-                        </ul>
-
-                        <a href="#" class="service-link">
-                            Más información <i class="fas fa-chevron-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Servicio 3 -->
-                <div class="service-card">
-                    <!-- <div class="service-image">
-                        <img src="https://i.postimg.cc/DyHrQxqM/student-visa.jpg" alt="Estudiante en biblioteca universitaria con libros y computadora">
-                    </div> -->
-                    <div class="service-content">
-                        <i class="fas fa-passport text-white text-2xl" style="font-size: 3rem; text-align: center;"></i>
-                        <h3>Visas de estudiante</h3>
-                        <p>Asesoría completa para estudiar en el extranjero con opción a residencia posterior.</p>
-
-                        <ul class="service-features">
-                            <li>Selección de instituciones educativas</li>
-                            <li>Visa F1, J1 (EE.UU.)</li>
-                            <li>Estudio en Canadá y Europa</li>
-                            <li>Tramitación de permisos de trabajo post-graduación</li>
-                        </ul>
-
-                        <a href="#" class="service-link">
-                            Más información <i class="fas fa-chevron-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Servicio 4 -->
-                <div class="service-card">
-                    <!-- <div class="service-image">
-                        <img src="https://i.postimg.cc/fLd2NHtB/investment-visa.jpg" alt="Personas estrechando manos en acuerdo de negocios internacionales">
-                    </div> -->
-                    <div class="service-content">
-                        <i class="fas fa-passport text-white text-2xl" style="font-size: 3rem; text-align: center;"></i>
-                        <h3>Visas de inversión</h3>
-                        <p>Opciones migratorias a través de inversión en negocios o proyectos económicos.</p>
-
-                        <ul class="service-features">
-                            <li>EB-5 (EE.UU.)</li>
-                            <li>Start-Up Visa (Canadá y Europa)</li>
-                            <li>Golden Visa (España y Portugal)</li>
-                            <li>Asesoría en creación de planes de negocio</li>
-                        </ul>
-
-                        <a href="#" class="service-link">
-                            Más información <i class="fas fa-chevron-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Servicio 5 -->
-                <div class="service-card">
-                    <!-- <div class="service-image">
-                        <img src="https://i.postimg.cc/ydDcYKdV/legal-defense.jpg" alt="Abogado revisando documentos legales con cliente en oficina">
-                    </div> -->
-                    <div class="service-content">
-                        <i class="fas fa-passport text-white text-2xl" style="font-size: 3rem; text-align: center;"></i>
-                        <h3>Defensa en deportación</h3>
-                        <p>Representación legal especializada en procedimientos de deportación y apelaciones.</p>
-
-                        <ul class="service-features">
-                            <li>Audiencias migratorias</li>
-                            <li>Solicitudes de cancelación de deportación</li>
-                            <li>Apelaciones ante corte migratoria</li>
-                            <li>Defensa de asilo y protección</li>
-                        </ul>
-
-                        <a href="#" class="service-link">
-                            Más información <i class="fas fa-chevron-right"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Servicio 6 -->
-                <div class="service-card">
-                    <!-- <div class="service-image">
-                        <img src="https://i.postimg.cc/YqXtPTJ7/citizenship.jpg" alt="Persona recibiendo certificado de naturalización en ceremonia">
-                    </div> -->
-                    <div class="service-content">
-                        <i class="fas fa-passport text-white text-2xl" style="font-size: 3rem; text-align: center;"></i>
-                        <h3>Ciudadanía y naturalización</h3>
-                        <p>Procesos para obtener la ciudadanía en tu país de residencia y disfrutar de todos los
-                            beneficios.</p>
-
-                        <ul class="service-features">
-                            <li>Naturalización por residencia</li>
-                            <li>Derecho de sangre (jus sanguinis)</li>
-                            <li>Doble nacionalidad</li>
-                            <li>Preparación para examen de ciudadanía</li>
-                        </ul>
-
-                        <a href="#" class="service-link">
-                            Más información <i class="fas fa-chevron-right"></i>
-                        </a>
-                    </div>
-                </div>
+            <div class="services-grid" id="cards-container">
+                <!-- Se llena dinámicamente -->
             </div>
         </div>
     </section>
@@ -1418,7 +1397,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Correo electrónico</h4>
-                            <p><a href="mailto:info@ConsularServices.com">consular.service1@gmail.com</a></p>
+                            <p><a href="mailto:consular.service1@gmail.com">consular.service1@gmail.com</a></p>
                         </div>
                     </div>
 
@@ -1428,15 +1407,15 @@
                         </div>
                         <div class="contact-details">
                             <h4>WhatsApp</h4>
-                            <p><a href="https://wa.me/5215512345678">+1 809 344 8698</a></p>
+                            <p><a href="https://wa.link/5rmr8e">+1 809 344 8698</a></p>
                         </div>
                     </div>
 
                     <div class="map-container mt-8">
                         <iframe
                             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d473.0686799284676!2d-69.91046832943051!3d18.45875539508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea56316464bfaf5%3A0xbc714b7df9257ff4!2sMalecon%20Center%20Torre%203!5e0!3m2!1ses!2sdo!4v1752588602043!5m2!1ses!2sdo"
-                            width="100%" height="260" style="border:0; border-radius: 10px;" allowfullscreen="" loading="lazy"
-                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                            width="100%" height="260" style="border:0; border-radius: 10px;" allowfullscreen=""
+                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
 
@@ -1519,113 +1498,192 @@
         </div>
     </footer>
 
+    <!-- Flip Cards -->
     <script>
-        // Mobile menu toggle
-        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-        const mainMenu = document.getElementById('mainMenu');
+        const cardData = {
+            visas: [
+                { icon: 'fa-solid fa-passport', title: 'Proceso de Visa', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
+                { icon: 'fa-regular fa-gem', title: 'Visa de Trabajo', description: 'Gestión completa de visas laborales en EE.UU., Canadá, Europa y otros destinos para profesionales calificados.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
+                { icon: 'fa-solid fa-file-circle-check', title: 'Reunificación familiar', description: 'Ayudamos a familias separadas por fronteras a reunirse legalmente en su país de destino.', feature1: 'Peticiones familiares', feature2: 'Ajuste de estatus', feature3: 'Procesos consulares', feature4: 'Excepciones por circunstancias especiales' },
+                { icon: 'fa-solid fa-passport', title: 'Visas de inversion', description: 'Opciones migratorias a través de inversión en negocios o proyectos económicos.', feature1: 'EB-5 (EE.UU.)', feature2: 'Start-Up Visa (Canadá y Europa)', feature3: 'Golden Visa (España y Portugal)', feature4: 'Asesoría en creación de planes de negocio' },
+                { icon: 'fa-solid fa-passport', title: 'Ciudadanía', description: 'Procesos para obtener la ciudadanía en tu país de residencia y disfrutar de todos los beneficios..', feature1: 'Naturalización por residencia', feature2: 'Derecho de sangre (jus sanguinis)', feature3: 'Doble nacionalidad', feature4: 'Preparación para examen de ciudadanía' }
+            ],
+            legalizacion: [
+                { icon: 'fa-solid fa-file-signature', title: 'Documentos Legales', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
+                { icon: 'fa-solid fa-stamp', title: 'Certificaciones Apostilladas', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
+                { icon: 'fa-solid fa-globe', title: 'Traducciones Juradas', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' }
+            ],
+            notarizacion: [
+                { icon: 'fa-solid fa-pen-fancy', title: 'Notarización de Documentos', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
+                { icon: 'fa-solid fa-file-shield', title: 'Declaraciones Juradas', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
+                { icon: 'fa-solid fa-id-card', title: 'Poderes Notariales', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' }
+            ],
+            consultas: [
+                { icon: 'fa-solid fa-comments', title: 'Consulta General', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
+                { icon: 'fa-solid fa-user-shield', title: 'Consulta con Abogado', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
+                { icon: 'fa-solid fa-calendar-check', title: 'Revisión de Caso', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' }
+            ]
+        };
 
-        mobileMenuBtn.addEventListener('click', () => {
-            mainMenu.classList.toggle('show');
-            mobileMenuBtn.innerHTML = mainMenu.classList.contains('show') ?
-                '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
+        const tabs = document.querySelectorAll('.tab');
+        const cardsContainer = document.getElementById('cards-container');
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
+        function renderCards(category) {
+            cardsContainer.classList.add('fade-out');
 
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
+            setTimeout(() => {
+                const cards = cardData[category]
+                    .map(card => `
+                <div class="service-card">
+                    <div class="service-content">
+                        <i class="${card.icon} text-white text-2xl" style="font-size: 3rem; text-align: center;"></i>
+                        <h3>${card.title}</h3>
+                        <p>${card.description}</p>
 
-                if (targetElement) {
-                    window.scrollTo({
-                        top: targetElement.offsetTop - 80,
-                        behavior: 'smooth'
-                    });
-                }
+                        <ul class="service-features">
+                            <li>${card.feature1}</li>
+                            <li>${card.feature2}</li>
+                            <li>${card.feature3}</li>
+                            <li>${card.feature4}</li>
+                        </ul>
 
-                // Close mobile menu if open
-                if (mainMenu.classList.contains('show')) {
-                    mainMenu.classList.remove('show');
-                    mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-                }
+                        <a href="https://wa.link/60889e" class="service-link" target="_blank">
+                            Más información <i class="fas fa-chevron-right"></i>
+                        </a>
+                    </div>
+                </div>
+            `)
+                    .join('');
+                cardsContainer.innerHTML = cards;
+                cardsContainer.classList.remove('fade-out');
+            }, 300);
+        }
+
+
+        tabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                tabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                const selectedTab = tab.getAttribute('data-tab');
+                renderCards(selectedTab);
             });
         });
 
-        // FAQ accordion functionality
-        const faqQuestions = document.querySelectorAll('.faq-question');
+        // Render default tab
+        renderCards('visas');
+    </script>
 
-        faqQuestions.forEach(question => {
-            question.addEventListener('click', () => {
-                const answer = question.nextElementSibling;
-                const icon = question.querySelector('i');
+    <!-- Mobile Menu, Faq, Submit and Animation -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // === MOBILE MENU  ===
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainMenu = document.getElementById('mainMenu');
 
-                // Toggle answer visibility
-                answer.classList.toggle('hidden');
+            if (mobileMenuBtn && mainMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mainMenu.classList.toggle('show');
+                    mobileMenuBtn.innerHTML = mainMenu.classList.contains('show')
+                        ? '<i class="fas fa-times"></i>'
+                        : '<i class="fas fa-bars"></i>';
+                });
+            }
 
-                // Rotate icon
-                icon.classList.toggle('transform');
-                icon.classList.toggle('rotate-180');
-
-                // Close other open answers
-                faqQuestions.forEach(q => {
-                    if (q !== question) {
-                        q.nextElementSibling.classList.add('hidden');
-                        q.querySelector('i').classList.remove('rotate-180');
+            // === SMOOTH SCROLLING  ===
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        // Cerrar menú móvil si está abierto
+                        if (mainMenu && mainMenu.classList.contains('show')) {
+                            mainMenu.classList.remove('show');
+                            if (mobileMenuBtn) {
+                                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                            }
+                        }
                     }
                 });
             });
-        });
 
-        // Form submission
-        const contactForm = document.getElementById('contactForm');
+            // === FAQ ===
+            const faqQuestions = document.querySelectorAll('.faq-question');
 
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
+            faqQuestions.forEach(question => {
+                question.addEventListener('click', () => {
+                    const answer = question.nextElementSibling;
+                    const icon = question.querySelector('i');
 
-            // Get form values
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const phone = document.getElementById('phone').value;
-            const service = document.getElementById('service').value;
-            const message = document.getElementById('message').value;
+                    // Primero cerramos todas las respuestas
+                    faqQuestions.forEach(q => {
+                        const otherAnswer = q.nextElementSibling;
+                        const otherIcon = q.querySelector('i');
 
-            // Here you would normally send the data to your server
-            // For this example, we'll just show an alert
-            alert(`Gracias ${name}, hemos recibido tu consulta sobre ${service}. Nos pondremos en contacto contigo pronto.`);
+                        if (otherAnswer) otherAnswer.classList.remove('show');
+                        if (otherIcon) {
+                            otherIcon.classList.remove('rotate-180');
+                            otherIcon.classList.remove('transform');
+                        }
+                    });
 
-            // Reset form
-            contactForm.reset();
-        });
-
-        // Scroll reveal animation
-        window.addEventListener('scroll', revealOnScroll);
-
-        function revealOnScroll() {
-            const elements = document.querySelectorAll('.service-card, .feature-item, .testimonial-card');
-
-            elements.forEach(element => {
-                const elementPosition = element.getBoundingClientRect().top;
-                const screenPosition = window.innerHeight / 1.2;
-
-                if (elementPosition < screenPosition) {
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
+                    // Luego abrimos solo la seleccionada
+                    if (answer) answer.classList.add('show');
+                    if (icon) {
+                        icon.classList.add('transform');
+                        icon.classList.add('rotate-180');
+                    }
+                });
             });
-        }
 
-        // Initialize elements with opacity 0 for animation
-        document.querySelectorAll('.service-card, .feature-item, .testimonial-card').forEach(el => {
-            el.style.opacity = '0';
-            el.style.transform = 'translateY(20px)';
-            el.style.transition = 'all 0.6s ease';
+
+            // === FORM SUBMISSION ===
+            const contactForm = document.getElementById('contactForm');
+            if (contactForm) {
+                contactForm.addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    const name = document.getElementById('name')?.value || '';
+                    const email = document.getElementById('email')?.value || '';
+                    const phone = document.getElementById('phone')?.value || '';
+                    const service = document.getElementById('service')?.value || '';
+                    const message = document.getElementById('message')?.value || '';
+
+                    alert(`Gracias ${name}, hemos recibido tu consulta sobre ${service}. Nos pondremos en contacto contigo pronto.`);
+                    contactForm.reset();
+                });
+            }
+
+            // === SCROLL REVEAL ===
+            const animatedElements = document.querySelectorAll('.service-card, .feature-item, .testimonial-card');
+
+            function revealOnScroll() {
+                animatedElements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+
+                    if (elementPosition < screenPosition) {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }
+                });
+            }
+
+            // Estilos iniciales
+            animatedElements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                el.style.transition = 'all 0.6s ease';
+            });
+
+            // Disparar al cargar y al hacer scroll
+            revealOnScroll();
+            window.addEventListener('scroll', revealOnScroll);
         });
-
-        // Trigger once on page load
-        revealOnScroll();
     </script>
-</body>
 
+</body>
 </html>
