@@ -229,7 +229,6 @@
         .home {
             height: 100vh;
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-                /* url('https://images.unsplash.com/photo-1452421822248-d4c2b47f0c81?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80'); */
                 url('img/banner.jpeg');
             background-size: cover;
             background-position: center;
@@ -262,7 +261,7 @@
 
         .home-image {
             position: absolute;
-            right: 0%;
+            right: 7%;
             bottom: 0%;
             width: auto;
             height: 90vh;
@@ -732,6 +731,7 @@
             padding: 2rem;
             border-radius: 15px;
             backdrop-filter: blur(5px);
+            height: 47rem;
         }
 
         .form-group {
@@ -786,6 +786,20 @@
         .submit-btn:hover {
             background-color: #1565c0;
             transform: translateY(-2px);
+        }
+
+        .contact-map {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            padding: 1rem;
+            gap: 1rem;
+        }
+
+        .contact-map img {
+            width: 35rem;
+            border-radius: 1rem;
+            filter:brightness(70%);
         }
 
         /* Footer */
@@ -871,9 +885,10 @@
         /* Responsive Styles */
         @media (max-width: 1425px) {
 
-            .home-image{
+            .home-image {
                 display: none;
             }
+
             .mobile-menu-btn {
                 display: none;
             }
@@ -935,9 +950,8 @@
                 display: block;
                 position: relative;
                 margin: 2rem auto;
-                width: 300px;
-                height: 550px;
-                right: 5%;
+                width: auto;
+                height: auto;
                 right: auto;
                 bottom: auto;
             }
@@ -981,8 +995,20 @@
                 margin: none;
             }
 
-            .conctact-icon  {
+            .conctact-icon {
                 margin: none;
+            }
+
+            .contact-map {
+                flex-direction: column;
+            }
+            
+            .contact-map iframe {
+                width: auto;
+            }
+
+            .contact-map img {
+                width: auto;
             }
         }
 
@@ -1036,7 +1062,7 @@
             <div class="home-content">
                 <h1>Tu futuro migratorio en manos de expertos</h1>
                 <p>Brindamos soluciones personalizadas para tus necesidades migratorias en EE.UU., Canadá, Europa y más.
-                    Más de X años ayudando a familias a cumplir sus sueños en el extranjero.</p>
+                    Más de 15 años ayudando a familias a cumplir sus sueños en el extranjero.</p>
 
                 <div class="home-buttons">
                     <a href="#contacto" class="btn btn-primary">
@@ -1064,7 +1090,7 @@
             </div>
 
             <div class="home-image">
-                <img src="img/JeanCarlos2.png"
+                <img src="img/JeanCarlosRecortado.png"
                     alt="Lic. JeanCarlos Restitullo - Director de ConsularServices en su oficina, revisando documentos con traje profesional">
             </div>
         </div>
@@ -1296,7 +1322,8 @@
                         <i class="fas fa-chevron-down"></i>
                     </button>
                     <div class="faq-answer">
-                        <p>Pueden hacerlo ciudadanos o residentes permanentes de EE.UU., y los familiares elegibles son:</p>
+                        <p>Pueden hacerlo ciudadanos o residentes permanentes de EE.UU., y los familiares elegibles son:
+                        </p>
                         <ul>
                             <li>Cónyuge</li>
                             <li>Padres (si el hijo es mayor de 21 años)</li>
@@ -1373,7 +1400,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Oficina principal</h4>
-                            <p>Av. George Washington, Malecon Center Local 107c Primer Nivel <br>Santo Domingo, CP 00000
+                            <p>Av. George Washington, Malecon Center Local 107c Primer Nivel <br>Santo Domingo
                             </p>
                         </div>
                     </div>
@@ -1384,7 +1411,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Teléfono</h4>
-                            <p><a href="tel:+525512345678">+1 000 000 0000</a></p>
+                            <p><a href="tel:+525512345678">+1 809 542 2601</a></p>
                         </div>
                     </div>
 
@@ -1405,16 +1432,12 @@
                         <div class="contact-details">
                             <h4>WhatsApp</h4>
                             <p><a href="https://wa.link/5rmr8e">+1 809 344 8698</a></p>
+                            <p><a href="https://wa.link/lfdtqx">+1 809 542 2661</a></p>
                         </div>
                     </div>
 
-                    <div class="map-container mt-8">
-                        <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d473.0686799284676!2d-69.91046832943051!3d18.45875539508!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea56316464bfaf5%3A0xbc714b7df9257ff4!2sMalecon%20Center%20Torre%203!5e0!3m2!1ses!2sdo!4v1752588602043!5m2!1ses!2sdo"
-                            width="100%" height="260" style="border:0; border-radius: 10px;" allowfullscreen=""
-                            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
                 </div>
+
 
                 <div class="contact-form">
                     <form id="contactForm">
@@ -1456,6 +1479,17 @@
                         </button>
                     </form>
                 </div>
+
+            </div>
+
+            <div class="contact-map">
+                <div class="map-container mt-8">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1892.2793723086647!2d-69.90886779570378!3d18.458333350280906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea5627a213d9175%3A0x9020afc41392be19!2sCONSULAR%20SERVICE!5e0!3m2!1ses!2sdo!4v1752783604248!5m2!1ses!2sdo"
+                        width="600" height="450" style="border:0; border-radius: 10px;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                </div>
+                <img src="img/Oficina.jpeg" alt="Imagen de Oficina Principal Consular Serivces">
             </div>
         </div>
     </section>
@@ -1691,4 +1725,5 @@
     </script>
 
 </body>
+
 </html>
