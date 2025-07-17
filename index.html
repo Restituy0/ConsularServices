@@ -386,7 +386,7 @@
             display: flex;
             justify-content: center;
             margin: 0 auto;
-            gap: 0.5rem;
+            gap: 1rem;
             width: fit-content;
             height: fit-content;
             margin-bottom: 2rem;
@@ -1080,7 +1080,7 @@
 
             <div class="about-container">
                 <div class="about-image">
-                    <img src="img/EquipoTemporal.jpg"
+                    <img src="img/Team.jpeg"
                         alt="Equipo de ConsularServices reunido en la sala de conferencias analizando casos migratorios">
                 </div>
 
@@ -1140,10 +1140,11 @@
 
             <!-- Tabs -->
             <div class="tabs">
-                <button class="tab active" data-tab="visas">Visas</button>
-                <button class="tab" data-tab="legalizacion">Legalización</button>
-                <button class="tab" data-tab="notarizacion">Notarización</button>
-                <button class="tab" data-tab="consultas">Consultas</button>
+                <button class="tab active" data-tab="visas">Visas y Residencias</button>
+                <button class="tab" data-tab="legalizacion">Documentacion y Legalizacion</button>
+                <button class="tab" data-tab="notarizacion">Registros Civiles</button>
+                <button class="tab" data-tab="consultas">Asesoría Legal y Migratoria</button>
+                <button class="tab" data-tab="otros">Otros</button>
             </div>
 
             <div class="services-grid" id="cards-container">
@@ -1498,30 +1499,38 @@
         </div>
     </footer>
 
-    <!-- Flip Cards -->
+    <!-- Services Cards -->
     <script>
         const cardData = {
             visas: [
                 { icon: 'fa-solid fa-passport', title: 'Proceso de Visa', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
-                { icon: 'fa-regular fa-gem', title: 'Visa de Trabajo', description: 'Gestión completa de visas laborales en EE.UU., Canadá, Europa y otros destinos para profesionales calificados.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
-                { icon: 'fa-solid fa-file-circle-check', title: 'Reunificación familiar', description: 'Ayudamos a familias separadas por fronteras a reunirse legalmente en su país de destino.', feature1: 'Peticiones familiares', feature2: 'Ajuste de estatus', feature3: 'Procesos consulares', feature4: 'Excepciones por circunstancias especiales' },
-                { icon: 'fa-solid fa-passport', title: 'Visas de inversion', description: 'Opciones migratorias a través de inversión en negocios o proyectos económicos.', feature1: 'EB-5 (EE.UU.)', feature2: 'Start-Up Visa (Canadá y Europa)', feature3: 'Golden Visa (España y Portugal)', feature4: 'Asesoría en creación de planes de negocio' },
-                { icon: 'fa-solid fa-passport', title: 'Ciudadanía', description: 'Procesos para obtener la ciudadanía en tu país de residencia y disfrutar de todos los beneficios..', feature1: 'Naturalización por residencia', feature2: 'Derecho de sangre (jus sanguinis)', feature3: 'Doble nacionalidad', feature4: 'Preparación para examen de ciudadanía' }
+                { icon: 'fa-solid fa-briefcase', title: 'Visa de Trabajo', description: 'Asistencia completa para obtener una visa laboral en el extranjero.', feature1: 'Evaluación del tipo de empleo y perfil del solicitante.', feature2: 'Revisión de contrato, oferta laboral y carta de empleador.', feature3: 'Preparación del expediente de solicitud y evidencia de elegibilidad.', feature4: 'Asesoría sobre entrevistas consulares y seguimiento.' },
+                { icon: 'fa-solid fa-people-roof', title: 'Reunificación familiar', description: 'Trámite migratorio para unir a familiares directos en el extranjero.', feature1: 'Evaluación del vínculo familiar elegible (esposo, hijos, padres).', feature2: 'Preparación de formulario I-130 u otros aplicables.', feature3: 'Apoyo con evidencia y cartas de relación genuina.', feature4: 'Seguimiento del caso ante USCIS o consulado.' },
+                { icon: 'fa-solid fa-globe-europe', title: 'Visados Europeos (Schengen)', description: 'Gestión de visas de corta duración para países del espacio Schengen.', feature1: 'Identificación del tipo de visado (turismo, negocios, visita).', feature2: 'Asesoría sobre seguro médico y medios económicos requeridos.', feature3: 'Agendamiento de cita consular y revisión de requisitos.', feature4: 'Preparación para entrevista y soporte documental.' },
+                { icon: 'fa-solid fa-house-circle-check', title: 'Peticion de Residencia Extranjera', description: 'Solicitudes de residencia temporal o permanente fuera del país.', feature1: 'Análisis de elegibilidad (familiar, laboral, humanitaria, etc.)', feature2: 'Preparación de formularios y expedientes de respaldo.', feature3: 'Orientación sobre pasos legales y tiempo estimado.', feature4: 'Seguimiento continuo del proceso migratorio.' },
+                { icon: 'fa-solid fa-house-circle-check', title: 'Peticion de Residencia Dominicana', description: 'Trámite de residencia temporal o permanente en la República Dominicana para extranjeros.', feature1: 'Evaluación del tipo de residencia: por vínculo, inversión, jubilación u otra.', feature2: 'Asesoría sobre requisitos según nacionalidad del solicitante.', feature3: 'Preparación de expedientes ante Migración Dominicana.', feature4: 'Acompañamiento durante entrevistas, exámenes médicos y renovación.' },
             ],
             legalizacion: [
-                { icon: 'fa-solid fa-file-signature', title: 'Documentos Legales', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
-                { icon: 'fa-solid fa-stamp', title: 'Certificaciones Apostilladas', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
-                { icon: 'fa-solid fa-globe', title: 'Traducciones Juradas', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' }
+                { icon: 'fa-solid fa-folder-open', title: 'Gestion de Documentacion Nacional e Internacional', description: 'Obtención, validación y legalización de documentos oficiales para uso dentro y fuera del país.', feature1: 'Tramitación de actas, certificaciones y constancias dominicanas.', feature2: 'Coordinación con embajadas o consulados extranjeros.', feature3: 'Seguimiento en procesos como apostillas, autenticaciones y traducciones.', feature4: 'Entrega física o digital según requerimientos del cliente.' },
+                { icon: 'fa-solid fa-certificate', title: 'Certificaciones Apostilladas', description: 'Tramitación de apostilla para documentos oficiales con validez internacional.', feature1: 'Asesoría sobre requisitos del país receptor.', feature2: 'Gestión ante la Cancillería y otras instituciones.', feature3: 'Control de errores comunes (fechas, nombres, sellos).', feature4: 'Entrega de documentos listos para uso en el extranjero.' },
+                { icon: 'fa-solid fa-language', title: 'Traducciones Oficiales', description: 'Traducción certificada y legal de documentos en idiomas requeridos.', feature1: 'Traducción por profesionales acreditados.', feature2: 'Certificación notarial o jurada si aplica.', feature3: 'Revisión técnica según terminología migratoria o legal.', feature4: 'Entrega en formatos físicos o digitales.' },
+                { icon: 'fa-solid fa-stamp', title: 'Notarización de Documentos', description: 'Legalización de firmas o contenido con validez jurídica nacional e internacional.', feature1: 'Identificación y validación del firmante.', feature2: 'Asesoría sobre tipos de documentos notarizables.', feature3: 'Registro oficial ante notario público.', feature4: 'Copia certificada y/o digital según necesidad.' },
+                { icon: 'fa-solid fa-file-signature', title: 'Declaraciones Juradas', description: 'Redacción y legalización de declaraciones personales o testimonios.', feature1: 'Elaboración conforme a ley y propósito legal.', feature2: 'Firma ante notario público y certificación.', feature3: 'Utilización en procesos migratorios, bancarios o judiciales.', feature4: 'Entrega con validez inmediata.' },
+                { icon: 'fa-solid fa-scroll', title: 'Actos Notariales', description: 'Redacción formal y legal de documentos como poderes, contratos o autorizaciones.', feature1: 'Asesoría jurídica para estructura correcta del acto.', feature2: 'Redacción técnica y precisa.', feature3: 'Firma y sellado por notario autorizado.', feature4: 'Opcional: apostilla o legalización internacional.' }
             ],
             notarizacion: [
-                { icon: 'fa-solid fa-pen-fancy', title: 'Notarización de Documentos', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
-                { icon: 'fa-solid fa-file-shield', title: 'Declaraciones Juradas', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
-                { icon: 'fa-solid fa-id-card', title: 'Poderes Notariales', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' }
+                { icon: 'fa-solid fa-file-lines', title: 'Transcripciones de Acta', description: 'Obtención oficial de actas de nacimiento, matrimonio, defunción, etc.', feature1: 'Localización en el Registro Civil correspondiente.', feature2: 'Solicitud de copias certificadas.', feature3: 'Trámite de legalización o apostilla si se requiere.', feature4: 'Revisión de datos para evitar inconsistencias.' },
+                { icon: 'fa-solid fa-baby', title: 'Declaraciones Tardías de Nacimiento', description: 'Registro legal de nacimiento cuando nunca fue inscrito en su debido tiempo.', feature1: 'Recolección de pruebas y testigos.', feature2: 'Elaboración del expediente legal.', feature3: 'Presentación ante Junta Central Electoral u otra autoridad.', feature4: 'Acompañamiento durante el proceso judicial si aplica.' },
+                { icon: 'fa-solid fa-file-excel', title: 'Proceso de Retiro de Fichas', description: 'Solicitud y eliminación de antecedentes migratorios o penales erróneos.', feature1: 'Análisis del caso y revisión del expediente.', feature2: 'Trámite ante organismos de seguridad o migración.', feature3: 'Asesoría jurídica sobre implicaciones.', feature4: 'Entrega de constancia limpia o resolución oficial.' }
             ],
             consultas: [
-                { icon: 'fa-solid fa-comments', title: 'Consulta General', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
-                { icon: 'fa-solid fa-user-shield', title: 'Consulta con Abogado', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' },
-                { icon: 'fa-solid fa-calendar-check', title: 'Revisión de Caso', description: 'Te ayudamos con todo el proceso de solicitud.', feature1: 'Sponsorship por empleador', feature2: 'Transferencias corporativas (L1, ICT)', feature3: 'Visas para profesiones especializadas', feature4: 'Tramitación de permisos de trabajo' }
+                { icon: 'fa-solid fa-scale-balanced', title: 'Perdón Migratorio (Waiver)', description: 'Solicitud de perdón por razones legales o migratorias (inadmisibilidad, entrada ilegal, etc.).', feature1: 'Diagnóstico del motivo de inadmisibilidad.', feature2: 'Redacción de carta legal con evidencia emocional y financiera.', feature3: 'Asistencia con formularios I-601, I-212 u otros.', feature4: 'Acompañamiento durante respuesta del consulado o USCIS.' },
+                { icon: 'fa-solid fa-map', title: 'Carta de Ruta', description: 'Diseño de estrategia migratoria personalizada según el perfil del cliente.', feature1: 'Evaluación inicial de objetivos migratorios.', feature2: 'Recomendación de rutas viables (visado, residencia, perdón, etc).', feature3: 'Cronograma y costos aproximados.', feature4: 'Plan de contingencia ante rechazos o demoras.' },
+                { icon: 'fa-solid fa-calendar-check', title: 'Programación de Citas de Residencia', description: 'Asistencia para obtener citas migratorias en embajadas o departamentos de migración.', feature1: 'Registro del solicitante en plataformas consulares.', feature2: 'Coordinación de fechas y documentación requerida.', feature3: 'Recomendación del tipo de cita (residencia, visado, biométricos).', feature4: 'Confirmación y recordatorio al cliente antes de la cita.' }
+            ],
+            otros: [
+                { icon: 'fa-solid fa-file-contract', title: 'Divorcio (al vapor)', description: 'Proceso de divorcio rápido por mutuo acuerdo, sin juicio prolongado.', feature1: 'Redacción del acuerdo de separación.', feature2: 'Firma y entrega ante tribunal competente.', feature3: 'Trámite de sentencia y acta de divorcio.', feature4: 'Asistencia en la modificación de estatus migratorios derivados.' },
+                { icon: 'fa-solid fa-child', title: 'Permiso de Salida de Menores', description: 'Autorización legal para que menores viajen solos o acompañados.', feature1: 'Redacción y notarización del permiso.', feature2: 'Traducción o apostilla si aplica al país de destino.', feature3: 'Verificación de requisitos del consulado.', feature4: 'Entrega segura con anticipación al viaje.' }
             ]
         };
 
