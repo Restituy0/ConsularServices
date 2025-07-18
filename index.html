@@ -60,7 +60,7 @@
 
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
         }
 
         .section-title h2 {
@@ -678,17 +678,17 @@
         .contact-info {
             display: flex;
             flex-direction: column;
+            gap: 3rem;
         }
 
         .contact-info h3 {
             font-size: 1.8rem;
-            margin-bottom: 1.5rem;
             color: white;
         }
 
         .contact-info p {
             color: var(--text-gray);
-            margin-bottom: 2rem;
+            margin-top: -45px;
         }
 
         .contact-method {
@@ -720,6 +720,7 @@
             color: var(--text-gray);
             text-decoration: none;
             transition: color 0.3s;
+            margin: 0;
         }
 
         .contact-details a:hover {
@@ -731,7 +732,6 @@
             padding: 2rem;
             border-radius: 15px;
             backdrop-filter: blur(5px);
-            height: 47rem;
         }
 
         .form-group {
@@ -788,18 +788,244 @@
             transform: translateY(-2px);
         }
 
-        .contact-map {
+        /* ---- Estilos Ubicacion ---- */
+        .location-container {
+            width: auto;
             display: flex;
-            flex-direction: row;
-            justify-content: space-around;
-            padding: 1rem;
-            gap: 1rem;
+            flex-direction: column;
+            justify-content: space-evenly;
+            gap: 5rem;
         }
 
-        .contact-map img {
-            width: 35rem;
-            border-radius: 1rem;
-            filter:brightness(70%);
+        /* Card de Mapa Interactivo */
+        .map-card {
+            background: rgba(30, 30, 30, 0.8);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .map-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 35px 60px -15px rgba(0, 0, 0, 0.6);
+        }
+
+        .map-globe-effect {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .premium-map {
+            width: 100%;
+            height: 100%;
+            border: none;
+            filter: saturate(1.2) contrast(1.1);
+        }
+
+        .location-marker {
+            position: absolute;
+            bottom: 40px;
+            right: 38%;
+            z-index: 3;
+            display: flex;
+            align-items: center;
+        }
+
+        /* .marker-pulse {
+            display: absolute;
+            width: 60px;
+            height: 60px;
+            background: rgba(30, 136, 229, 0.4);
+            border-radius: 50%;
+            animation: pulse-animation 2s infinite;
+        } */
+
+        .marker-pin {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-red);
+            border-radius: 50% 50% 50% 0;
+            transform: rotate(-45deg);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.2rem;
+            box-shadow: 0 0 10px rgba(229, 57, 53, 0.7);
+            margin-bottom: 10px;
+        }
+
+        .marker-pin i {
+            transform: rotate(45deg);
+        }
+
+        .marker-label {
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            margin-left: 0.5rem;
+        }
+
+        .map-card-footer {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .direction-btn {
+            margin: 0;
+            background: var(--primary-blue);
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(30, 136, 229, 0.4);
+        }
+
+        .direction-btn:hover {
+            background: var(--primary-red);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(255, 0, 0, 0.4);
+        }
+
+        /* Galería de Oficina */
+        .office-gallery {
+            background: rgba(30, 30, 30, 0.6);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .gallery-main {
+            position: relative;
+            height: 500px;
+            overflow: hidden;
+        }
+
+        .gallery-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            filter: grayscale(50%);
+        }
+
+        .gallery-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .gallery-nav button {
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-nav button:hover {
+            background: var(--primary-blue);
+            transform: scale(1.1);
+        }
+
+        .gallery-counter {
+            color: white;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: 600;
+        }
+
+        .gallery-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-red) 100%);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .gallery-thumbnails {
+            display: flex;
+            padding: 20px;
+            gap: 15px;
+            overflow: hidden;
+            justify-content: center;
+        }
+
+        .thumbnail {
+            min-width: 100px;
+            height: 70px;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            opacity: 0.7;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .thumbnail.active {
+            opacity: 1;
+            border-color: var(--primary-blue);
+        }
+
+        .thumbnail:hover {
+            opacity: 1;
+            transform: translateY(-3px);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Animaciones */
+        @keyframes pulse-animation {
+            0% {
+                transform: scale(0.6);
+                opacity: 0.7;
+            }
+
+            70% {
+                transform: scale(1.2);
+                opacity: 0.1;
+            }
+
+            100% {
+                transform: scale(1.3);
+                opacity: 0;
+            }
         }
 
         /* Footer */
@@ -883,6 +1109,24 @@
         }
 
         /* Responsive Styles */
+
+        @media (min-width: 1024px) {
+            .location-container {
+                flex-direction: row;
+                align-items: stretch;
+            }
+
+            .map-card,
+            .office-gallery {
+                flex: 1;
+            }
+
+            .map-card {
+                margin-right: -50px;
+                z-index: 3;
+            }
+        }
+
         @media (max-width: 1425px) {
 
             .home-image {
@@ -1002,7 +1246,7 @@
             .contact-map {
                 flex-direction: column;
             }
-            
+
             .contact-map iframe {
                 width: auto;
             }
@@ -1010,6 +1254,25 @@
             .contact-map img {
                 width: auto;
             }
+
+            .map-globe-effect,
+            .gallery-main {
+                height: 400px;
+            }
+
+            .location-marker {
+                bottom: 20px;
+                left: 20px;
+            }
+
+            .marker-label {
+                display: none;
+            }
+
+            .gallery-thumbnails {
+                overflow: auto;
+            }
+
         }
 
         @media (max-width: 480px) {
@@ -1400,8 +1663,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Oficina principal</h4>
-                            <p>Av. George Washington, Malecon Center Local 107c Primer Nivel <br>Santo Domingo
-                            </p>
+                            <p>Av. George Washington, Malecon Center Local 107c Primer Nivel <br>Santo Domingo</p>
                         </div>
                     </div>
 
@@ -1411,7 +1673,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Teléfono</h4>
-                            <p><a href="tel:+525512345678">+1 809 542 2601</a></p>
+                            <p><a href="tel:+18095422601">+1 809 542 2601</a></p>
                         </div>
                     </div>
 
@@ -1435,9 +1697,7 @@
                             <p><a href="https://wa.link/lfdtqx">+1 809 542 2661</a></p>
                         </div>
                     </div>
-
                 </div>
-
 
                 <div class="contact-form">
                     <form id="contactForm">
@@ -1479,17 +1739,71 @@
                         </button>
                     </form>
                 </div>
-
             </div>
 
-            <div class="contact-map">
-                <div class="map-container mt-8">
-                    <iframe
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1892.2793723086647!2d-69.90886779570378!3d18.458333350280906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea5627a213d9175%3A0x9020afc41392be19!2sCONSULAR%20SERVICE!5e0!3m2!1ses!2sdo!4v1752783604248!5m2!1ses!2sdo"
-                        width="600" height="450" style="border:0; border-radius: 10px;" allowfullscreen=""
-                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <br>
+
+            <div class="section-title">
+                <h2>Visitanos en Nuestras Oficinas</h2>
+            </div>
+
+            <!-- Sección de Ubicación -->
+            <div class="location-container">
+                <!-- Tarjeta de Mapa Interactivo -->
+                <div class="map-card">
+                    <div class="map-globe-effect">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1892.2793723086647!2d-69.90886779570378!3d18.458333350280906!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8ea5627a213d9175%3A0x9020afc41392be19!2sCONSULAR%20SERVICE!5e0!3m2!1ses!2sdo!4v1752783604248!5m2!1ses!2sdo"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                            class="premium-map">
+                        </iframe>
+                        <div class="location-marker">
+                            <!-- <div class="marker-pulse"></div> -->
+                            <div class="marker-pin">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span class="marker-label">¡Estamos aquí!</span>
+                        </div>
+                    </div>
+                    <div class="map-card-footer">
+                        <a class="direction-btn" href="https://www.google.com/maps/dir//CONSULAR+SERVICE+Av.+George+Washington,+Plaza+Malecón+Center+local+107+c+primer+nivelSANTO+Domingo/@18.4583995,-69.9088973,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8ea5627a213d9175:0x9020afc41392be19!2m2!1d-69.9088973!2d18.4583995?entry=ttu&g_ep=EgoyMDI1MDcxNS4xIKXMDSoASAFQAw%3D%3D" target="_blank">
+                            <i class="fas fa-route"></i>Cómo llegar
+                        </a>
+                    </div>
                 </div>
-                <img src="img/Oficina.jpeg" alt="Imagen de Oficina Principal Consular Serivces">
+
+                <!-- Galería de Oficina -->
+                <div class="office-gallery">
+                    <div class="gallery-main">
+                        <img src="img/Oficina.jpeg" alt="Oficina Principal - Espacio moderno con equipo profesional">
+                        <div class="gallery-nav">
+                            <button class="gallery-prev"><i class="fas fa-chevron-left"></i></button>
+                            <div class="gallery-counter">1 / 4</div>
+                            <button class="gallery-next"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                        <div class="gallery-badge">
+                            <i class="fas fa-home"></i> Visitanos
+                        </div>
+                    </div>
+                    <div class="gallery-thumbnails">
+                        <div class="thumbnail active" data-index="0">
+                            <img src="https://lh3.googleusercontent.com/p/AF1QipPhaoj89HzJWSmnc9xy3mFGPIgxwvKJARs2P1T6=s680-w680-h510-rw"
+                                alt="Recepción">
+                        </div>
+                        <div class="thumbnail" data-index="1">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nq9KldBBtQFsA2LZd_GIRx1xefw4e929EHvMV4ApEDJ3vlcGxvfFRxkbbiPPNv4ZX5AfU0CNAnUWi9JHwFBkfpTikbt35bdM_hAu57aNx_P6jUUCK8lBBtJ90tdktTMLrKTtJA=s680-w680-h510-rw"
+                                alt="Recepción">
+                        </div>
+                        <div class="thumbnail" data-index="2">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nr8p_NLRnb-Ck1t3w_j-uITBzhLQSDSB-7-ja9NTNunTKMbQD4V60EVaVWsU-9lVtCOVzu15ShOj6I9q-rQxv3c37uMR7LGIaiYq_jNSaBz2D4ZY8x7iSy_QZM98ueFAf9yjojG=s680-w680-h510-rw"
+                                alt="Sala de reuniones">
+                        </div>
+                        <div class="thumbnail" data-index="3">
+                            <img src="https://lh3.googleusercontent.com/gps-cs-s/AC9h4nolJitEJo3M_WIQISi5K4qgecQEj1YsMZ5U9EuF4PiDjNBEv6PB92LZ22jiO1SKSJ806Cu-fBnkAGrxY1YVTC3cncSTapIHoD3dN9VOaqN4ZHqnrTGXeV64Qn5ooq6xq5YPmTYU=s680-w680-h510-rw"
+                                alt="Área de trabajo">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1722,6 +2036,52 @@
             revealOnScroll();
             window.addEventListener('scroll', revealOnScroll);
         });
+    </script>
+
+    <!-- Mapa -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Galería de imágenes
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            const mainImage = document.querySelector('.gallery-main img');
+            const galleryCounter = document.querySelector('.gallery-counter');
+
+            thumbnails.forEach((thumb, index) => {
+                thumb.addEventListener('click', function () {
+                    // Remover clase active de todos los thumbnails
+                    thumbnails.forEach(t => t.classList.remove('active'));
+                    // Añadir clase active al thumbnail clickeado
+                    this.classList.add('active');
+                    // Cambiar imagen principal
+                    mainImage.src = this.querySelector('img').src;
+                    // Actualizar contador
+                    galleryCounter.textContent = `${index + 1}/${thumbnails.length}`;
+                });
+            });
+
+            // Botones de navegación de galería
+            document.querySelector('.gallery-next').addEventListener('click', function () {
+                const activeThumb = document.querySelector('.thumbnail.active');
+                const nextThumb = activeThumb.nextElementSibling || thumbnails[0];
+                nextThumb.click();
+            });
+
+            document.querySelector('.gallery-prev').addEventListener('click', function () {
+                const activeThumb = document.querySelector('.thumbnail.active');
+                const prevThumb = activeThumb.previousElementSibling || thumbnails[thumbnails.length - 1];
+                prevThumb.click();
+            });
+
+            // Efecto de marcador de mapa
+            const marker = document.querySelector('.marker-pin');
+            setInterval(() => {
+                marker.style.transform = 'rotate(-45deg) scale(1.1)';
+                setTimeout(() => {
+                    marker.style.transform = 'rotate(-45deg) scale(1)';
+                }, 300);
+            }, 3000);
+        });
+
     </script>
 
 </body>
