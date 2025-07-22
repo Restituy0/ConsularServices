@@ -7,130 +7,8 @@
     <title>Consular Services - Expertos en Gestión Migratoria</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="img/Logo Consular Services.png">
+    <link rel="stylesheet" href="main.css">
     <style>
-        /* Fuentes y colores */
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Open+Sans:wght@400;600&display=swap');
-
-        :root {
-            --primary-blue: #1e88e5;
-            --primary-red: #e53935;
-            --dark-bg: #121212;
-            --darker-bg: #0a0a0a;
-            --text-light: #f5f5f5;
-            --text-gray: #b0bec5;
-            --accent-gold: #ffb300;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        a {
-            text-decoration: none;
-        }
-
-        body {
-            font-family: 'Open Sans', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        h1,
-        h2,
-        h3,
-        h4 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-        }
-
-        /* Estilos generales */
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        section {
-            padding: 4rem 0;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title h2:after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 3px;
-            background-color: var(--primary-red);
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .section-title p {
-            color: var(--text-gray);
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        /* Botones */
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 1.8rem;
-            border-radius: 30px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--primary-red);
-            color: white;
-        }
-
-        .btn-primary:hover {
-            background-color: #c62828;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(229, 57, 53, 0.4);
-        }
-
-        .btn-secondary {
-            background-color: var(--primary-blue);
-            color: white;
-        }
-
-        .btn-secondary:hover {
-            background-color: #1565c0;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(30, 136, 229, 0.4);
-        }
-
-        .btn-whatsapp {
-            background-color: #25d366;
-            color: white;
-        }
-
-        .btn-whatsapp:hover {
-            background-color: #128c7e;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(37, 211, 102, 0.4);
-        }
-
         /* Header */
         header {
             background-color: rgba(18, 18, 18, 0.9);
@@ -826,53 +704,6 @@
             filter: saturate(1.2) contrast(1.1);
         }
 
-        .location-marker {
-            position: absolute;
-            bottom: 40px;
-            right: 38%;
-            z-index: 3;
-            display: flex;
-            align-items: center;
-        }
-
-        /* .marker-pulse {
-            display: absolute;
-            width: 60px;
-            height: 60px;
-            background: rgba(30, 136, 229, 0.4);
-            border-radius: 50%;
-            animation: pulse-animation 2s infinite;
-        } */
-
-        .marker-pin {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-red);
-            border-radius: 50% 50% 50% 0;
-            transform: rotate(-45deg);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            color: white;
-            font-size: 1.2rem;
-            box-shadow: 0 0 10px rgba(229, 57, 53, 0.7);
-            margin-bottom: 10px;
-        }
-
-        .marker-pin i {
-            transform: rotate(45deg);
-        }
-
-        .marker-label {
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 8px 15px;
-            border-radius: 30px;
-            font-weight: 600;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-            margin-left: 0.5rem;
-        }
-
         .map-card-footer {
             padding: 20px;
             display: flex;
@@ -1130,7 +961,7 @@
         @media (max-width: 1425px) {
 
             .home-image {
-                display: none;
+                left: auto;
             }
 
             .mobile-menu-btn {
@@ -1139,7 +970,7 @@
 
         }
 
-        @media (max-width: 800px) {
+        @media (max-width: 1058px) {
             .header-container {
                 padding: 1rem;
             }
@@ -1170,10 +1001,6 @@
                 display: none;
             }
 
-            .mobile-menu-btn {
-                display: block;
-            }
-
             .home {
                 text-align: center;
                 padding-top: 100px;
@@ -1191,13 +1018,7 @@
             }
 
             .home-image {
-                display: block;
-                position: relative;
-                margin: 2rem auto;
-                width: auto;
-                height: auto;
-                right: auto;
-                bottom: auto;
+                display: none;
             }
 
             .home-buttons {
@@ -1757,13 +1578,6 @@
                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
                             class="premium-map">
                         </iframe>
-                        <div class="location-marker">
-                            <!-- <div class="marker-pulse"></div> -->
-                            <div class="marker-pin">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <span class="marker-label">¡Estamos aquí!</span>
-                        </div>
                     </div>
                     <div class="map-card-footer">
                         <a class="direction-btn" href="https://www.google.com/maps/dir//CONSULAR+SERVICE+Av.+George+Washington,+Plaza+Malecón+Center+local+107+c+primer+nivelSANTO+Domingo/@18.4583995,-69.9088973,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x8ea5627a213d9175:0x9020afc41392be19!2m2!1d-69.9088973!2d18.4583995?entry=ttu&g_ep=EgoyMDI1MDcxNS4xIKXMDSoASAFQAw%3D%3D" target="_blank">
